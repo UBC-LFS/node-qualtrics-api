@@ -1,4 +1,4 @@
-import fetch from './internal/fetch'
+import fetchAll from './internal/fetchAll'
 
 require('dotenv').config()
 
@@ -12,5 +12,5 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN
 */
 
 export default function getSurveys () {
-  return fetch(qualtricsDomain + 'surveys')
+  return fetchAll(qualtricsDomain + 'surveys')
 }

@@ -14,17 +14,16 @@ const requestObj = url => ({
   'method': 'GET',
   'uri': url,
   'json': true,
-  'resolveWithFullResponse': true,
   'headers': {
-    'Authorization': 'Bearer ' + token
+    'x-api-token': token
   }
 })
 
 const fetchAll = (url, result = []) =>
   request(requestObj(url))
     .then(response => {
-      result = [...result, ...response]
-      return response.nextPage ? result : fetchAll(result.next, result)
+      result = [...result, ...response.result.elements]
+      return response.nextPage ? fetchAll(requestObj(result.nextPage), result) : result
     }).catch(err => console.log(err))
 
 const fetchAllRateLimited = limiter.wrap(fetchAll)
