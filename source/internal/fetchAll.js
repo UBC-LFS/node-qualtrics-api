@@ -1,10 +1,9 @@
 import request from 'request-promise'
-import linkparser from 'parse-link-header'
 import Bottleneck from 'bottleneck'
 
 require('dotenv').config()
 
-const token = process.env.CANVAS_API_TOKEN
+const token = process.env.QUALTRICS_API_TOKEN
 
 const limiter = new Bottleneck({
   maxConcurrent: 20,
@@ -24,9 +23,8 @@ const requestObj = url => ({
 const fetchAll = (url, result = []) =>
   request(requestObj(url))
     .then(response => {
-      result = [...result, ...response.body]
-      const links = linkparser(response.headers.link)
-      return links.next ? fetchAll(links.next.url, result) : result
+      result = [...result, ...response]
+      return response.nextPage ? result : fetchAll(result.next, result)
     }).catch(err => console.log(err))
 
 const fetchAllRateLimited = limiter.wrap(fetchAll)

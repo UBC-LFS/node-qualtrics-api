@@ -3,7 +3,7 @@ import Bottleneck from 'bottleneck'
 
 require('dotenv').config()
 
-const token = process.env.CANVAS_API_TOKEN
+const token = process.env.QUALTRICS_API_TOKEN
 
 const limiter = new Bottleneck({
   maxConcurrent: 20,
@@ -14,9 +14,8 @@ const requestObj = url => ({
   'method': 'GET',
   'uri': url,
   'json': true,
-  'resolveWithFullResponse': true,
   'headers': {
-    'Authorization': 'Bearer ' + token
+    'x-api-token': token
   }
 })
 
