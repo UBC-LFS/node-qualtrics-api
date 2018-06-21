@@ -1,7 +1,7 @@
 {
-  "name": "qualtrics-api",
+  "name": "node-qualtrics-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Qualtrics API for Node",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
