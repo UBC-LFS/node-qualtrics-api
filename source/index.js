@@ -1,1 +1,1 @@
-export { default as getSurveys } from './getSurveys'
+export { default as listSurveys } from './listSurveys'
