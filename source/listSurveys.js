@@ -6,9 +6,9 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN
 
 /**
  * Retrieves all surveys in an account
- * @return {Promise} A promise that resolves to a Survey object
+ * @return {Promise} A promise that resolves to a list of Survey objects: https://api.qualtrics.com/docs/list-surveys
 */
 
-export default function getSurveys () {
+export default function listSurveys () {
   return fetchAll(qualtricsDomain + 'surveys')
 }
