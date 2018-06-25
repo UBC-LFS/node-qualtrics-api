@@ -11,7 +11,7 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN
  * @return {Promise} A promise that resolves to a Survey object: https://api.qualtrics.com/docs/get-survey
 */
 
-export default async function getResponseExport (survey) {
+export default async function getResponseExportId (survey) {
   const id = await (getSurveyId(survey))
   return createResponseExport(qualtricsDomain + 'responseexports', id)
 }
