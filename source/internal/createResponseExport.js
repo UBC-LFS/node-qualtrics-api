@@ -26,6 +26,7 @@ const requestObj = (url, surveyId) => ({
 })
 
 const createResponseExport = (url, surveyId) => request(requestObj(url, surveyId))
+  .then(response => response.result)
 
 const fetchRateLimited = limiter.wrap(createResponseExport)
 
