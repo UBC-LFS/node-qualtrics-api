@@ -3,7 +3,6 @@ import listSurveys from './listSurveys'
 /**
  * Get survey ID based on the survey name
  * @param {String} name name of the survey
- * @param {Array} surveys list of surveys
  * @return {String} the survey ID as string
  */
 
