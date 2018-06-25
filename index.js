@@ -1,3 +1,3 @@
-const { listSurveys, getSurvey, listMailingLists } = require('./src/index')
+const { listSurveys, getSurvey, listMailingLists, getSurveyId } = require('./src/index')
 
-getSurvey().then(x => console.log(x))
+getSurvey(getSurveyId('Test#2', listSurveys())).then(x => console.log(x))
