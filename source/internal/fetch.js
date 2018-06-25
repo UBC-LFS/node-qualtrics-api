@@ -20,7 +20,6 @@ const requestObj = url => ({
 })
 
 const fetch = url => request(requestObj(url))
-  .then(response => response)
 
 const fetchRateLimited = limiter.wrap(fetch)
 
