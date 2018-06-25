@@ -1,6 +1,5 @@
 import request from 'request-promise'
 import Bottleneck from 'bottleneck'
-import fs from 'fs'
 
 require('dotenv').config()
 
