@@ -15,7 +15,7 @@ export default async function getSurveyId (name) {
   } else {
     return surveys.then(survey => survey.reduce((acc, cur) => {
       if (name === cur.name) {
-        acc = cur.id
+        return cur.id
       }
       return acc.id
     }))
