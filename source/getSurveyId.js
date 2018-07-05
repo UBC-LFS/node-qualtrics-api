@@ -7,10 +7,17 @@ import listSurveys from './listSurveys'
  */
 
 export default async function getSurveyId (name) {
-  return listSurveys().then(surveys => surveys.reduce((acc, cur) => {
-    if (name === cur.name) {
-      acc = cur.id
-    }
-    return acc
-  }))
+  const surveys = listSurveys()
+  if (surveys.length === 0) {
+    return 'You hath no survey.'
+  } else if (surveys.length === 1) {
+    return surveys.map(survey => survey.id)[0]
+  } else {
+    return surveys.then(survey => survey.reduce((acc, cur) => {
+      if (name === cur.name) {
+        acc = cur.id
+      }
+      return acc.id
+    }))
+  }
 }
