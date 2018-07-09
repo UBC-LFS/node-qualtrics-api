@@ -10,7 +10,7 @@ const limiter = new Bottleneck({
   minTime: 100
 })
 
-const requestObj = (url, surveyId) => ({
+const requestObj = (url, surveyId, body) => ({
   'method': 'POST',
   'uri': url,
   'json': true,

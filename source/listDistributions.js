@@ -1,5 +1,5 @@
 import fetchAll from './internal/fetchAll'
-import getSurveyId from './getSurveyId'
+import getSurveyIds from './getSurveyIds'
 
 require('dotenv').config()
 
@@ -12,6 +12,6 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN
 */
 
 export default async function listDistribution (survey) {
-  const id = await getSurveyId(survey)
+  const id = await getSurveyIds(survey)
   return fetchAll(qualtricsDomain + 'distributions?surveyId=' + id)
 }
