@@ -20,7 +20,7 @@ const requestObj = (url, surveyId, body) => ({
   },
   'body': {
     'surveyId': surveyId,
-    'format': 'csv'
+    'format': 'json'
   }
 })
 
