@@ -13,6 +13,7 @@ const limiter = new Bottleneck({
 const requestObj = url => ({
   'method': 'GET',
   'uri': url,
+  'encoding': null,
   'json': true,
   'headers': {
     'x-api-token': token

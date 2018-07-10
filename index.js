@@ -27,4 +27,5 @@ getSurveyIds('LFS LC Loans 2018')
 //   .then(x => console.log(x))
 
 fetch('https://ubc.qualtrics.com/API/v3/responseexports/ES_44qdqdlsedldjkulgmlhev8rdq/file')
+  // .then(stream => console.log(stream))
   .then(stream => promisify(fs.writeFile)('./output.zip', stream))
