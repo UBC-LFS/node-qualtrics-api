@@ -1,0 +1,18 @@
+import listUsers from './listUsers'
+
+/**
+ * Get user ID based on the username
+ * @param {String} name name of the user
+ * @return {String} the user ID as string
+ */
+
+export default async function getUserId (name) {
+  const users = await listUsers()
+  if (users.length === 0) {
+    console.log('There are no users.')
+  } else {
+    return users
+      .filter(({ username }) => username === name)
+      .map(({ id }) => id)
+  }
+}

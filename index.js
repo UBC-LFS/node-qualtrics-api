@@ -8,7 +8,10 @@ const {
   getResponseExportId,
   getResponseExportProgress,
   downloadFile,
-  polling
+  polling,
+  listUsers,
+  getUserId,
+  getUser
 } = require('./src/index')
 
 const fs = require('fs')
@@ -36,9 +39,6 @@ const updateProgress = polling(responseProgress)
 //   .then(x => console.log(x))
 //   .then(url => fetch(url))
 //   .then(stream => promisify(fs.writeFile)('./output.zip', stream))
-
-// fetch('https://ubc.qualtrics.com/API/v3/responseexports/ES_86kaau3pgf5fn4uvsbd05r8nlg/file')
-//   .then(x => console.log(x))
 
 // fetch('https://ubc.qualtrics.com/API/v3/responseexports/ES_vv4o2g42oebua2m2e3bta68cee/file')
 //   // .then(stream => console.log(stream))
