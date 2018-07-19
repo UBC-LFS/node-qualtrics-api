@@ -7,36 +7,39 @@ const {
   getDistribution,
   getResponseExportId,
   getResponseExportProgress,
-  downloadFile
+  downloadFile,
+  polling
 } = require('./src/index')
 
 const fs = require('fs')
 const { promisify } = require('util')
 const fetch = require('./src/internal/fetch')
 
-const responseID = getSurveyIds('test')
+const responseProgress = getSurveyIds('food')
   .then(ids => ids[0])
   .then(id => getResponseExportId(id))
+  .then(({ id }) => getResponseExportProgress(id))
 
-function responseProgress (id) {
-  return id.then(({ id }) => getResponseExportProgress(id))
-}
-// const responseProgress = responseID
-//   .then(({ id }) => getResponseExportProgress(id))
+const updateProgress = polling(responseProgress)
+// const updateProgress = setInterval(function () {
+//   responseProgress
+//     .then(({ percentComplete, file }) => {
+//       if (percentComplete === 100) {
+//         fetch(file)
+//           .then(stream => promisify(fs.writeFile)('./output.zip', stream))
+//         clearInterval(updateProgress)
+//       }
+//     })
+//     .catch(err => console.log(err))
+// }, 1000)
 
-const getProgress = setInterval(function () { responseProgress(responseID) }, 50)
+//   .then(x => console.log(x))
+//   .then(url => fetch(url))
+//   .then(stream => promisify(fs.writeFile)('./output.zip', stream))
 
-if (responseProgress.percentComplete === 100) {
-  clearInterval(getProgress)
-} else console.log(getProgress)
+// fetch('https://ubc.qualtrics.com/API/v3/responseexports/ES_86kaau3pgf5fn4uvsbd05r8nlg/file')
+//   .then(x => console.log(x))
 
-// //   .then(x => console.log(x))
-//   // .then(url => fetch(url))
-//   // .then(stream => promisify(fs.writeFile)('./output.zip', stream))
-
-// // fetch('https://ubc.qualtrics.com/API/v3/responseexports/ES_86kaau3pgf5fn4uvsbd05r8nlg/file')
-// //   .then(x => console.log(x))
-
-fetch('https://ubc.qualtrics.com/API/v3/responseexports/ES_44qdqdlsedldjkulgmlhev8rdq/file')
-  // .then(stream => console.log(stream))
-  .then(stream => promisify(fs.writeFile)('./output.zip', stream))
+// fetch('https://ubc.qualtrics.com/API/v3/responseexports/ES_vv4o2g42oebua2m2e3bta68cee/file')
+//   // .then(stream => console.log(stream))
+//   .then(stream => promisify(fs.writeFile)('./output.zip', stream))
