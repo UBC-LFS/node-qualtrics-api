@@ -6,6 +6,7 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN
 
 /**
  * Retrieves all users in the collection
+ * Must be a Qualtrics brand administrator to use this call
  * @return {Promise} A promise that resolves to a list of Users objects: https://api.qualtrics.com/docs/list-users
  */
 

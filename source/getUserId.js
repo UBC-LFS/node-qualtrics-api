@@ -2,6 +2,7 @@ import listUsers from './listUsers'
 
 /**
  * Get user ID based on the username
+ * Must be a Qualtrics brand administrator to use this call
  * @param {String} name name of the user
  * @return {String} the user ID as string
  */
