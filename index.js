@@ -11,7 +11,10 @@ const {
   polling,
   listUsers,
   getUserId,
-  getUser
+  getUser,
+  getSurveyQuotas,
+  getMailingListIds,
+  getMailingList
 } = require('./src/index')
 
 const fs = require('fs')
@@ -23,7 +26,8 @@ const responseProgress = getSurveyIds('food')
   .then(id => getResponseExportId(id))
   .then(({ id }) => getResponseExportProgress(id))
 
-const updateProgress = polling(responseProgress)
+getMailingList('Another').then(x => console.log(x))
+// const updateProgress = polling(responseProgress)
 // const updateProgress = setInterval(function () {
 //   responseProgress
 //     .then(({ percentComplete, file }) => {
