@@ -14,19 +14,21 @@ const {
   getUser,
   getSurveyQuotas,
   getMailingListIds,
-  getMailingList
-} = require('./src/index')
+  getMailingList,
+  listQuestions
+} = require("./src/index");
 
-const fs = require('fs')
-const { promisify } = require('util')
-const fetch = require('./src/internal/fetch')
+const fs = require("fs");
+const { promisify } = require("util");
+const fetch = require("./src/internal/fetch");
 
-const responseProgress = getSurveyIds('food')
-  .then(ids => ids[0])
-  .then(id => getResponseExportId(id))
-  .then(({ id }) => getResponseExportProgress(id))
+// const responseProgress = getSurveyIds("food")
+//   .then(ids => ids[0])
+//   .then(id => getResponseExportId(id))
+//   .then(({ id }) => getResponseExportProgress(id));
 
-getMailingList('Another').then(x => console.log(x))
+//getMailingList("Another").then(x => console.log(x));
+listQuestions("food").then(x => console.log(x));
 // const updateProgress = polling(responseProgress)
 // const updateProgress = setInterval(function () {
 //   responseProgress
