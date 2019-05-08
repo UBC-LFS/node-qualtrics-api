@@ -41,6 +41,15 @@ $ npm run build
 $ node index.js
 ```
 
+Create .env file:
+
+```env
+QUALTRICS_API_DOMAIN=https://yourdatacenterid.qualtrics.com/API/v3/
+QUALTRICS_API_TOKEN= YOUR QUALTRICS TOKEN
+```
+
+UBC students can get a token from ubc.qualtrics.com with their CWL
+
 ## Authors
 
 - **Justin Lee**
