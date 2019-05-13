@@ -1,7 +1,7 @@
-import fetchAll from "./internal/fetchAll";
-import getSurveyIds from "./getSurveyIds";
+import fetchAll from './internal/fetchAll';
+import getSurveyIds from './getSurveyIds';
 
-require("dotenv").config();
+require(`dotenv`).config();
 
 const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN;
 
@@ -13,5 +13,5 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN;
 
 export default async function listQuestions(name) {
   const id = await getSurveyIds(name);
-  return fetchAll(qualtricsDomain + "survey-definitions/" + id + "/questions");
+  return fetchAll(`${qualtricsDomain}survey-definitions/${id}/questions`);
 }

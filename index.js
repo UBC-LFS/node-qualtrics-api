@@ -19,11 +19,11 @@ const {
   getQuestion,
   getOptions,
   getSurveyMetadata
-} = require("./src/index");
+} = require(`./src/index`);
 
-const fs = require("fs");
-const { promisify } = require("util");
-const fetch = require("./src/internal/fetch");
+const fs = require(`fs`);
+const { promisify } = require(`util`);
+const fetch = require(`./src/internal/fetch`);
 
 // const responseProgress = getSurveyIds("food")
 //   .then(ids => ids[0])
@@ -31,7 +31,7 @@ const fetch = require("./src/internal/fetch");
 //   .then(({ id }) => getResponseExportProgress(id));
 
 //getMailingList("Another").then(x => console.log(x));
-getSurveyMetadata("food").then(x => console.log(x));
+listQuestions(`food`).then(x => console.log(x));
 // const updateProgress = polling(responseProgress)
 // const updateProgress = setInterval(function () {
 //   responseProgress
