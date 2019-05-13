@@ -7,7 +7,7 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN
 /**
  * Retrieves all messages in a library
  * @param {String} library id of libarary
- * @return {Promise} A promise that resolves to a list of Mailing lists objects: https://api.qualtrics.com/docs/list-surveys
+ * @return {Promise} A promise that resolves to a list of messages in a library: https://api.qualtrics.com/reference#get-library-messages
 */
 
 export default function listLibraryMessages(library) {
