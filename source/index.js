@@ -18,3 +18,4 @@ export { default as getMailingListIds } from "./getMailingListIds";
 export { default as getMailingList } from "./getMailingList";
 export { default as listQuestions } from "./listQuestions";
 export { default as getQuestion } from "./getQuestion";
+export { default as getOptions } from "./getOptions";
