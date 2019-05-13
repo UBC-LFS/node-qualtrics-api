@@ -18,7 +18,9 @@ const {
   listQuestions,
   getQuestion,
   getOptions,
-  getSurveyMetadata
+  getSurveyMetadata,
+  listSurveyVersion,
+  getSurveyVersion
 } = require(`./src/index`);
 
 const fs = require(`fs`);
@@ -31,7 +33,7 @@ const fetch = require(`./src/internal/fetch`);
 //   .then(({ id }) => getResponseExportProgress(id));
 
 //getMailingList("Another").then(x => console.log(x));
-listQuestions(`food`).then(x => console.log(x));
+getSurveyVersion(`food`, '9223370479691545092').then(x => console.log(x));
 // const updateProgress = polling(responseProgress)
 // const updateProgress = setInterval(function () {
 //   responseProgress
