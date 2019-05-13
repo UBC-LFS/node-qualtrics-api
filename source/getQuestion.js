@@ -9,7 +9,7 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN;
  * Retrieves a question from a Survey
  * @param {String} name name of Survey
  * @param {String} questionID ID of question
- * @return {Promise} A promise that resolves to a list of Survey questions: https://api.qualtrics.com/reference#list-questions-1
+ * @return {Promise} A promise that resolves to a Survey questions: https://api.qualtrics.com/reference#get-question
  */
 
 export default async function getQuestion(name, questionID) {
