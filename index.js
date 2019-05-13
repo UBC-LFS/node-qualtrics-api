@@ -17,7 +17,8 @@ const {
   getMailingList,
   listQuestions,
   getQuestion,
-  getOptions
+  getOptions,
+  getSurveyMetadata
 } = require("./src/index");
 
 const fs = require("fs");
@@ -30,7 +31,7 @@ const fetch = require("./src/internal/fetch");
 //   .then(({ id }) => getResponseExportProgress(id));
 
 //getMailingList("Another").then(x => console.log(x));
-getOptions("food").then(x => console.log(x));
+getSurveyMetadata("food").then(x => console.log(x));
 // const updateProgress = polling(responseProgress)
 // const updateProgress = setInterval(function () {
 //   responseProgress

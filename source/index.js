@@ -19,3 +19,4 @@ export { default as getMailingList } from "./getMailingList";
 export { default as listQuestions } from "./listQuestions";
 export { default as getQuestion } from "./getQuestion";
 export { default as getOptions } from "./getOptions";
+export { default as getSurveyMetadata } from "./getSurveyMetadata";
