@@ -11,7 +11,7 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN
  * @return {Promise} A promise that resolves to a list of Survey Version objects: https://api.qualtrics.com/reference#list-survey-versions-1
 */
 
-export default async function listSurveys(name) {
+export default async function listSurveyVersions(name) {
     const id = await getSurveyIds(name);
     console.log(`${qualtricsDomain}survey-definitions/${id}/versions`);
     return fetchAll(`${qualtricsDomain}survey-definitions/${id}/versions`)

@@ -11,7 +11,7 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN;
  * @return {Promise} A promise that resolves to Survey Options: https://api.qualtrics.com/reference#get-options
  */
 
-export default async function getQuestion(name) {
+export default async function getOptions(name) {
   const surveyId = await getSurveyIds(name);
   return fetch(`${qualtricsDomain}survey-definitions/${surveyId}/options`);
 }
