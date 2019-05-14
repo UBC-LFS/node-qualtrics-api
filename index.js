@@ -21,7 +21,8 @@ const {
   getSurveyMetadata,
   listSurveyVersion,
   getSurveyVersion,
-  listLibraryMessages
+  listLibraryMessages,
+  getLibraryMessage
 } = require(`./src/index`);
 
 const fs = require(`fs`);
@@ -34,7 +35,7 @@ const fetch = require(`./src/internal/fetch`);
 //   .then(({ id }) => getResponseExportProgress(id));
 
 //getMailingList("Another").then(x => console.log(x));
-listLibraryMessages(`UR_09DXHMXmTsXD14h`).then(x => console.log(x));
+getLibraryMessage(`UR_09DXHMXmTsXD14h`, `MS_dlZLcsiwkvRqtb7`).then(x => console.log(x));
 // const updateProgress = polling(responseProgress)
 // const updateProgress = setInterval(function () {
 //   responseProgress
