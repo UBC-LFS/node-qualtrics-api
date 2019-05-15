@@ -24,7 +24,8 @@ const {
   listLibraryMessages,
   getLibraryMessage,
   listContacts,
-  updateSurvey
+  updateSurvey,
+  importSurvey
 } = require(`./src/index`);
 
 const fs = require(`fs`);
@@ -37,8 +38,10 @@ const fetch = require(`./src/internal/fetch`);
 //   .then(({ id }) => getResponseExportProgress(id));
 
 //getMailingList("Another").then(x => console.log(x));
-updateSurvey(`land`, { "name": "food" }).then(x => console.log(x));
-listSurveys().then(x => console.log(x));
+var finished = false;
+importSurvey(__dirname + '/Austins_Imported_Survey.qsf').then(x => {
+  console.log(x);
+});
 // const updateProgress = polling(responseProgress)
 // const updateProgress = setInterval(function () {
 //   responseProgress
