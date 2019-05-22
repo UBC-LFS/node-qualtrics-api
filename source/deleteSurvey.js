@@ -13,5 +13,5 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN
 
 export default async function deleteSurvey(survey) {
     const id = await (getSurveyIds(survey));
-    return deleteRequest(qualtricsDomain + 'surveys/' + id);
+    return deleteRequest(`${qualtricsDomain}surveys/${id}`);
 }
