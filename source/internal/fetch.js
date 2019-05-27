@@ -16,7 +16,8 @@ const requestObj = url => ({
   'encoding': null,
   'json': true,
   'headers': {
-    'x-api-token': token
+    'x-api-token': token,
+    'accept': 'application/json'
   }
 })
 
