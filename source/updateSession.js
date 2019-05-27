@@ -14,7 +14,7 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN
  * @return {Promise} A promise that resolves to updating a survey session: https://api.qualtrics.com/reference#update-session
 */
 
-export default async function createSession(survey, session, advance, questions) {
+export default async function updateSession(survey, session, advance, questions) {
     const id = await (getSurveyIds(survey))
     const info = {
         'advance': advance,
