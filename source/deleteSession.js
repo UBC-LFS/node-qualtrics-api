@@ -12,7 +12,7 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN
  * @return {Promise} A promise that resolves to deleting a survey session: https://api.qualtrics.com/reference#delete-session
 */
 
-export default async function createSession(survey, session) {
+export default async function deleteSession(survey, session) {
     const id = await (getSurveyIds(survey))
     return deleteRequest(`${qualtricsDomain}surveys/${id}/sessions/${session}`)
 }

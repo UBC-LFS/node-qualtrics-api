@@ -17,7 +17,8 @@ const requestObj = (url, info) => ({
     'json': true,
     'headers': {
         'x-api-token': token,
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'accept': 'application/json'
     },
     'body': info
 })
