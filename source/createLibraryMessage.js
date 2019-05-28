@@ -1,5 +1,4 @@
 import create from './internal/createRequest'
-import getSurveyIds from './getSurveyIds'
 
 require('dotenv').config()
 
