@@ -1,4 +1,5 @@
 import create from './internal/createRequest'
+import getMailingListIds from './getMailingListIds'
 
 require('dotenv').config()
 
@@ -6,7 +7,7 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN
 
 /**
  * Creates a new Contact
- * @param {String} mailingList Mailing List id
+ * @param {String} mailingList name of mailinglist
  * @param {String} firstName Contact's first name
  * @param {String} lastName Contact's last name
  * @param {String} email Contact's email
@@ -14,7 +15,8 @@ const qualtricsDomain = process.env.QUALTRICS_API_DOMAIN
  * @return {Promise} A promise that resolves to creating a contact: https://api.qualtrics.com/reference#create-recipient-contact
 */
 
-export default function createContact(mailingList, firstName, lastName, email, unsubscribed) {
+export default async function createContact(mailingList, firstName, lastName, email, unsubscribed) {
+    const id = await getMailingListIds(mailingList);
     const contact = {
         'firstName': firstName,
         'lastName': lastName,
@@ -22,5 +24,5 @@ export default function createContact(mailingList, firstName, lastName, email, u
         'language': 'en',
         'unsubscribed': unsubscribed
     }
-    return create(`${qualtricsDomain}mailinglists/${mailingList}/contacts`, contact)
+    return create(`${qualtricsDomain}mailinglists/${id}/contacts`, contact)
 }
