@@ -71,3 +71,6 @@ credentials.json
 quickstart.json
 src/
 test.js
+
+# index testing
+index.js

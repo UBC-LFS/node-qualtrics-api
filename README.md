@@ -31,6 +31,8 @@ const qualtricsAPI = require("node-qualtrics-api");
 
 Attached to the `qualtricsAPI` are a bunch of functions.
 
+https://api.qualtrics.com/reference
+
 ### Testing
 
 To run repo for testing:
